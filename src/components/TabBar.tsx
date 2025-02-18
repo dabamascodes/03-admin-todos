@@ -1,5 +1,6 @@
 'use client';
 
+import { setCookie } from "cookies-next";
 import { useState } from "react";
 
 
@@ -16,6 +17,7 @@ export const TabBar = ({ tabOptions = [1,2,3,4], currentTab = 1 }: Props) => {
 
     const onTabSelected = ( tab: number ) => {
       setSelected( tab );
+      setCookie('selectedTab', tab.toString() );
     }
 
     return (
