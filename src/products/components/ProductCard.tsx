@@ -4,6 +4,7 @@
 // https://tailwindcomponents.com/component/e-commerce-product-card
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { IoAddCircleOutline, IoTrashOutline } from "react-icons/io5";
 import { Star } from "./Star";
 import { addProductToCart } from "@/shopping-cart/actions/actions";
@@ -18,8 +19,11 @@ interface Props {
 
 export const ProductCard = ({ id, name, price, rating, image }: Props) => {
 
+  const router = useRouter();
+
   const onAddToCart = () => {
     addProductToCart(id);
+    router.refresh();
   }
   return (
     <div className="shadow rounded-lg max-w-sm bg-gray-800 border-gray-100">
