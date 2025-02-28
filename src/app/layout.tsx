@@ -1,4 +1,4 @@
-import AuthProvider from "./auth/components/AuthProvider";
+import AuthProvider from "../auth/components/AuthProvider";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
